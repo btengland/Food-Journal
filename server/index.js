@@ -17,7 +17,7 @@ const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
 app.use(express.json())
 app.use(session({
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   secret: SESSION_SECRET,
   cookie: {
     maxAge: 1000 * 60 * 60 * 24
