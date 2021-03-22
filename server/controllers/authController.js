@@ -1,4 +1,0 @@
-// Auth Controller!
-
-
-// module.export = {}
