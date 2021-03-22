@@ -14,12 +14,18 @@ const Landing = (props) => {
     return (
         <div className='landing'>
             <form className='login'>
+                <input className={!newUser ? 'hide' : 'login-input'}
+                    placeholder='Username' 
+                    onChange={e => setUsername(e.target.value)}
+                    value={username} />
                 <input className='login-input'
-                    placeholder='Username'/>
+                    placeholder='Email' 
+                    onChange={e => setEmail(e.target.value)}
+                    value={email} />
                 <input className='login-input'
-                    placeholder='Email'/>
-                <input className='login-input'
-                    placeholder='Password'/>
+                    placeholder='Password' 
+                    onChange={e => setPassword(e.target.value)}
+                    value={password} />
                 <section className='button-box'>
                     <button className='login-button'> Log In </button>
                     {

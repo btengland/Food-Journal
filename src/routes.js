@@ -1,9 +1,9 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
-import Register from './Components/Auth/Register'
+import Landing from './Components/Auth/landing'
 
 export default (
     <Switch>
-        <Route exact path='/' component={Register}/>
+        <Route exact path='/' component={Landing}/>
     </Switch>
 )
