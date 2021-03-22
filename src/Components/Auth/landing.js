@@ -1,4 +1,7 @@
 import React, {useState} from 'React'
+import { setUser } from '../../ducks/userReducer'
+import { connect } from 'react-redux'
+import axios from 'axios'
 
 const Landing = (props) => {
     const [newUser, setNewUser] = useState(false)
@@ -9,6 +12,32 @@ const Landing = (props) => {
     const addUser = (e) => {
         e.preventDefault()
         setNewUser(true)
+    }
+
+    const register = async (e) => {
+        e.preventDefault();
+        setNewUser(false)
+        try {
+            const user = await axios.post('/auth/register', { email, password, username })
+            props.setUser(user.data);
+            props.history.push('/main')
+        }
+        catch {
+            alert('failed register attempt')
+        }
+    }
+
+    const login = async (e) => {
+        e.preventDefault()
+        setNewUser(false)
+        try {
+            const user = await axios.post('/auth/login', { email, password })
+            props.setUser(user.data)
+            props.history.push('/Main')
+        }
+        catch {
+            alert('failed login attempt')
+        }
     }
 
     return (
@@ -27,19 +56,23 @@ const Landing = (props) => {
                     onChange={e => setPassword(e.target.value)}
                     value={password} />
                 <section className='button-box'>
-                    <button className='login-button'> Log In </button>
+                    <button className='login-button'
+                    onClick={login} > Log In </button>
                     {
                         !newUser
                         ?
                         <button className='login-button'
                             onClick={addUser} > New User </button>
                         :
-                        <button className='login-button'> Register </button>
+                        <button className='login-button'
+                            onClick={register} > Register </button>
                     }
                 </section>
             </form>
         </div>
     )
-}
+}  
 
-export default Landing
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps, { setUser })( Landing )
