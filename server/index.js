@@ -9,7 +9,7 @@ const session = require('express-session')
 const app = express()
 
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
-// const auth = require('./controllers/authController');
+const auth = require('./controllers/authController');
 // const day = require('./controllers/dayController');
 // const week = require('./controllers/weekController');
 
@@ -42,6 +42,10 @@ massive({
 // register  `/auth/register`
 // login  `/auth/login`
 // logout`/auth/logout`
+app.post(`/auth/register`, auth.emailMiddleware, auth.register);
+app.post(`/auth/login`, auth.login);
+app.post(`/auth/logout`, auth.logout);
+app.get(`/auth/user`, auth.getUserSession);
 // getFoodPost  `/api/foods`
 // deleteFoodPost  `/api/foods/:id`
 // editFoodPost  `/api/foods/:id`
