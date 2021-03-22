@@ -2,7 +2,7 @@ import '../../reset.css'
 
 const Header = () => {
     return (
-        <div>Header</div>
+        <div>The Header</div>
     )
 }
 
