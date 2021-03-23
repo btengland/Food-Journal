@@ -43,7 +43,7 @@ app.get(`/auth/user`, auth.getUserSession);
 
 // Food Endpoints
 app.get('/api/foods', foodsController.getFoods)
-app.get('/api/food/:meal_id', foodsController.getFood)
+app.get('/api/foods/:meal_id', foodsController.getFood)
 app.delete('/api/foods/:meal_id', foodsController.deleteFood)
 app.post('/api/foods', foodsController.addFood)
 app.put('/api/foods/:meal_id', foodsController.editFood)
