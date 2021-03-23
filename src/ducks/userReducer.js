@@ -16,14 +16,12 @@ export function setUser (user) {
     }
 }
 
-
 export function logOut () {
     return {
         type: LOGOUT,
         payload: initialState
     }
 }
-
 
 export function getUser(){
     const user = axios.get('/auth/user').then(res => res.data)

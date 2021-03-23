@@ -48,7 +48,7 @@ module.exports = {
         if (req.session.user){
             res.status(200).send(req.session.user);
         } else {
-            res.status(404).send('Please Log In')
+            res.sendStatus(401)
         }
     },
     emailMiddleware: (req, res, next) => {
@@ -56,6 +56,13 @@ module.exports = {
            return next()
         } else {
             res.status(500).send("invalid email")
+        }
+    },
+    usernameMiddleware: (req, res, next) => {
+        if(req.body.username){
+            return next()
+        } else {
+            res.status(502).send("no username")
         }
     }
 }

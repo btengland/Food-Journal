@@ -1,15 +1,27 @@
 import './reset.css'
+import { connect } from 'react-redux'
 import Routes from './routes'
 import Header from './Components/Header/Header'
-import './App.css';
+import './App.css'
+import { NotificationContainer } from 'react-notifications'
+import { useEffect } from 'react'
+import { getUser } from './ducks/userReducer'
 
-function App() {
+const App = (props) => {
+
+  useEffect(() => {
+    props.getUser()
+  }, [])
+
   return (
     <div className="App">
-      <Header/>
+      {props.user.isLoggedIn === true && <Header />}
       {Routes}
+      <NotificationContainer />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps, { getUser })(App);
