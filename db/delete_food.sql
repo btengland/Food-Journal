@@ -1,2 +1,2 @@
-DELETE FROM foods WHERE food_id = $1;
+DELETE FROM foods WHERE meal_id = $1;
 SELECT * FROM foods;
