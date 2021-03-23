@@ -42,11 +42,11 @@ app.get(`/auth/user`, auth.getUserSession);
 
 
 // Food Endpoints
-app.get('/api/foods', foodsController.getFoods)
-app.get('/api/foods/:meal_id', foodsController.getFood)
-app.delete('/api/foods/:meal_id', foodsController.deleteFood)
-app.post('/api/foods', foodsController.addFood)
-app.put('/api/foods/:meal_id', foodsController.editFood)
+app.get(`/api/foods`, foods.getFoods);
+app.get(`/api/foods/:meal_id`, foods.getFood);
+app.delete(`/api/foods/:meal_id`, foods.deleteFood);
+app.post(`/api/foods`, foods.addFood);
+app.put(`/api/foods/:meal_id`, foods.editFoods);
 
 
 
