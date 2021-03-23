@@ -46,7 +46,7 @@ app.get(`/api/foods`, foods.getFoods);
 app.get(`/api/foods/:meal_id`, foods.getFood);
 app.delete(`/api/foods/:meal_id`, foods.deleteFood);
 app.post(`/api/foods`, foods.addFood);
-app.put(`/api/foods/:meal_id`, foods.editFood);
+app.put(`/api/foods/:meal_id`, foods.editFoods);
 
 
 
