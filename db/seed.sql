@@ -18,14 +18,14 @@ CREATE TABLE foods (
     
 );
 
-CREATE TABLE mealtype (
-    mealtype_id SERIAL PRIMARY KEY,
-    mealtype_name VARCHAR(25)
+-- CREATE TABLE mealtype (
+--     mealtype_id SERIAL PRIMARY KEY,
+--     mealtype_name VARCHAR(25)
     
-);
-INSERT INTO mealtype (mealtype_name)
-VALUES ('Breakfast'), ('Lunch'), ('Dinner'),('Snack');
--- second breakfast
+-- );
+-- INSERT INTO mealtype (mealtype_name)
+-- VALUES ('Breakfast'), ('Lunch'), ('Dinner'),('Snack');
+-- -- second breakfast
 
 CREATE TABLE allergentype (
     allergen_id SERIAL PRIMARY KEY,
