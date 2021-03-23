@@ -1,4 +1,4 @@
-import React, {useState} from 'React'
+import React, {useState} from 'react'
 import { setUser } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 import axios from 'axios'
