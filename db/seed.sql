@@ -10,11 +10,12 @@ CREATE TABLE users (
 CREATE TABLE foods (
     meal_id SERIAL PRIMARY KEY,
     date DATE,
+    title VARCHAR (50)
     mealtime VARCHAR (25),
     allergens VARCHAR(25),
     rating INT
     user_id INT REFERENCES users (user_id)
-    foods_name VARCHAR (50)
+    
 );
 
 CREATE TABLE mealtype (
