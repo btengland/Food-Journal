@@ -1,7 +1,6 @@
-INSERT INTO foods (user_id) 
--- add whatever team wants to add in foods catagory
-VALUES
-($1);
--- add the values of whatever team wants to add from the catagory ($1, $2, $3, $4 etc..)
-
+INSERT INTO foods (title)
+VALUES ($1,);
 SELECT * FROM foods;
+
+-- INSERT INTO foods ()
+-- VALUES ();
