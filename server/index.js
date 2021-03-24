@@ -10,8 +10,8 @@ const app = express()
 
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
 const auth = require('./controllers/authController');
-// const day = require('./controllers/dayController');
-// const week = require('./controllers/weekController');
+const foods = require('./controllers/foodsController')
+
 
 
 app.use(express.json())
@@ -35,6 +35,7 @@ massive({
 })
 
 
+<<<<<<< HEAD
 
 
 
@@ -43,17 +44,22 @@ massive({
 // login  `/auth/login`
 // logout`/auth/logout`
 app.post(`/auth/register`, auth.emailMiddleware,auth.usernameMiddleware, auth.register);
+=======
+app.post(`/auth/register`, auth.emailMiddleware, auth.register);
+>>>>>>> main
 app.post(`/auth/login`, auth.login);
 app.post(`/auth/logout`, auth.logout);
 app.get(`/auth/user`, auth.getUserSession);
-// getFoodPost  `/api/foods`
-// deleteFoodPost  `/api/foods/:id`
-// editFoodPost  `/api/foods/:id`
-// addFood  `/api/foods`
 
 
-// getDate `api/date/`
-// editDate  `api/date/:id`
+// Food Endpoints
+app.get(`/api/foods`, foods.getFoods);
+app.get(`/api/foods/:meal_id`, foods.getFood);
+app.delete(`/api/foods/:meal_id`, foods.deleteFood);
+app.post(`/api/foods`, foods.addFood);
+app.put(`/api/foods/:meal_id`, foods.editFoods);
+
+
 
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))

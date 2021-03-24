@@ -10,19 +10,22 @@ CREATE TABLE users (
 CREATE TABLE foods (
     meal_id SERIAL PRIMARY KEY,
     date DATE,
+    title VARCHAR (50)
     mealtime VARCHAR (25),
     allergens VARCHAR(25),
     rating INT
-);
-
-CREATE TABLE mealtype (
-    mealtype_id SERIAL PRIMARY KEY,
-    mealtype_name VARCHAR(25)
+    user_id INT REFERENCES users (user_id)
     
 );
-INSERT INTO mealtype (mealtype_name)
-VALUES ('Breakfast'), ('Lunch'), ('Dinner'),('Snack');
--- second breakfast
+
+-- CREATE TABLE mealtype (
+--     mealtype_id SERIAL PRIMARY KEY,
+--     mealtype_name VARCHAR(25)
+    
+-- );
+-- INSERT INTO mealtype (mealtype_name)
+-- VALUES ('Breakfast'), ('Lunch'), ('Dinner'),('Snack');
+-- -- second breakfast
 
 CREATE TABLE allergentype (
     allergen_id SERIAL PRIMARY KEY,

@@ -1,8 +1,11 @@
 import '../../reset.css'
+import Meals from '../Meals/Meals'
 
 const Main = () => {
     return (
-        <div>Main</div>
+        <div>
+            <Meals/>
+        </div>
     )
 }
 
