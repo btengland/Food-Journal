@@ -24,9 +24,9 @@ module.exports = {
   },
   editFoods: (req, res) => {
       const db = req.app.get('db')
-      const {title} = req.body
+      const {title, mealtime, allergens, rating} = req.body
       const {meal_id} = req.params
-      db.foods.edit_food(meal_id, title)
+      db.foods.edit_food(meal_id, title, mealtime, allergens, rating)
       .then((foods) => {
           res.status(200).send(foods)
       })
