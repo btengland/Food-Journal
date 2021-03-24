@@ -9,9 +9,8 @@ CREATE TABLE users (
 --named 'foods' so that it can operate with CRUD code
 CREATE TABLE foods (
     meal_id SERIAL PRIMARY KEY,
-    date DATE,
-    title VARCHAR (50)
-    mealtime VARCHAR (25),
+    mealtype VARCHAR (50)
+    _date DATE (25),
     allergens VARCHAR(25),
     rating INT
     user_id INT REFERENCES users (user_id)
