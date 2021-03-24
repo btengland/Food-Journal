@@ -37,7 +37,7 @@ massive({
 
 app.post(`/auth/register`, auth.emailMiddleware, auth.register);
 app.post(`/auth/login`, auth.login);
-app.post(`/auth/logout`, auth.logout);
+app.delete(`/auth/logout`, auth.logout);
 app.get(`/auth/user`, auth.getUserSession);
 
 

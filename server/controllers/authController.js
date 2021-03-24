@@ -39,10 +39,9 @@ module.exports = {
             res.status(401).send("Incorrect login information")
         }
     },
-    logout: (req, res) => {
-        req.session.destroy();
+    logout: async (req, res) => {
+        await req.session.destroy();
         res.sendStatus(200);
-       
     },
     getUserSession: (req, res) => {
         if (req.session.user){

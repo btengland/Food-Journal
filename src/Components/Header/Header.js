@@ -1,6 +1,6 @@
 import '../../reset.css'
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { logOut } from '../../ducks/userReducer'
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
@@ -10,12 +10,12 @@ const Header = (props) => {
 
     const logout = async () => {
         try {
-            const user = await axios.post('/auth/logout')
+            const user = await axios.delete('/auth/logout')
             props.logOut(user.data)
             props.history.push('/')
         }
-        catch {
-            console.log(err => err)
+        catch (err) {
+            console.log('err')
         }
     }
 
@@ -42,4 +42,4 @@ const Header = (props) => {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, { logOut })(Header)
+export default withRouter(connect(mapStateToProps, { logOut })(Header))
