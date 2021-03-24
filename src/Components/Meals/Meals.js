@@ -17,6 +17,10 @@ const Meals = (props) => {
             props.addMeal(meal.data)
         }
         catch (err) {console.log(err)}
+        setDate('')
+        setMealType('')
+        setFoodItems([])
+        setMood(0)
 
     }
 
