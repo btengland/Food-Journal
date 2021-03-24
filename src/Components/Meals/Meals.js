@@ -7,8 +7,8 @@ const Meals = (props) => {
     const [date, setDate] = useState('')
     const [mealType, setMealType] = useState('')
     const [foodItems, setFoodItems] = useState([])
-    console.log(foodItems)
     const [mood, setMood] = useState(0)
+    console.log(props)
 
     const handleMeal = async (e) => {
         e.preventDefault()

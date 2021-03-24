@@ -16,9 +16,9 @@ module.exports = {
   },
   addFood: (req, res) => {
       const db = req.app.get('db')
-      const {user_id} = req.session.user
-      const {mealType, date, allergens, rating} = req.body
-      db.add_food([mealType, date, allergens, rating, user_id])
+      const {userId} = req.session.user
+      const {mealType, date, foodItems, mood} = req.body
+      db.add_food([mealType, date, foodItems, mood, userId])
       .then((foods) => {
           res.status(200).send(foods)
       })
