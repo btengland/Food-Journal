@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: pink;
   height: 12vh;
   width: 100vw;
 }
@@ -11,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: orange;
   height: 12vh;
   width: 100vw;
 }
