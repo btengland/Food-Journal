@@ -18,6 +18,15 @@ CREATE TABLE foods (
     
 );
 
+
+
+
+
+
+
+
+
+
 -- CREATE TABLE mealtype (
 --     mealtype_id SERIAL PRIMARY KEY,
 --     mealtype_name VARCHAR(25)
@@ -27,23 +36,23 @@ CREATE TABLE foods (
 -- VALUES ('Breakfast'), ('Lunch'), ('Dinner'),('Snack');
 -- -- second breakfast
 
-CREATE TABLE allergentype (
-    allergen_id SERIAL PRIMARY KEY,
-    allergen_name VARCHAR(50)
-    );
+-- CREATE TABLE allergentype (
+--     allergen_id SERIAL PRIMARY KEY,
+--     allergen_name VARCHAR(50)
+--     );
 
-    INSERT INTO allergentype(allergen_name)
-    VALUES ('Wheat'), ('Fish'), ('Milk'), ('Eggs'), ('Peanuts'), ('Soybeans'), ('Tree Nuts'), ('Crustacean/Shellfish');
+--     INSERT INTO allergentype(allergen_name)
+--     VALUES ('Wheat'), ('Fish'), ('Milk'), ('Eggs'), ('Peanuts'), ('Soybeans'), ('Tree Nuts'), ('Crustacean/Shellfish');
 
        
 
-CREATE TABLE ratingtype (
-    rating_id SERIAL PRIMARY KEY,
-    rating_int INT
+-- CREATE TABLE ratingtype (
+--     rating_id SERIAL PRIMARY KEY,
+--     rating_int INT
 
-);
-INSERT INTO ratingtype (rating_int)
-VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
+-- );
+-- INSERT INTO ratingtype (rating_int)
+-- VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
 
 
 
