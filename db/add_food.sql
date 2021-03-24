@@ -1,6 +1,7 @@
-INSERT INTO foods (mealType, _date, allergens, rating)
-VALUES ($1, $2, $3, $4);
-SELECT * FROM foods;
+INSERT INTO foods (mealtype, _date, allergens, rating, user_id)
+VALUES ($1, $2, $3, $4, $5);
+SELECT * FROM foods
+WHERE user_id = $5;
 
 -- INSERT INTO foods ()
 -- VALUES ();

@@ -10,23 +10,25 @@ module.exports = {
   getFood: (req, res) => {
       const db = req.app.get('db')
       const {meal_id} = req.params
-      db.foods.get_food(meal_id).then(foods => {
+      db.foods.get_food([meal_id]).then(foods => {
           res.status(200).send(foods[0])
       })
   },
   addFood: (req, res) => {
       const db = req.app.get('db')
-      const {mealType, _date, allergens, rating} = req.body
-      db.foods.add_food(mealType, _date, allergens, rating)
+      const {userId} = req.session.user
+      const {mealType, date, foodItems, mood} = req.body
+      db.add_food([mealType, date, foodItems, mood, userId])
       .then((foods) => {
           res.status(200).send(foods)
       })
+      .catch(err => console.log(err))
   },
   editFoods: (req, res) => {
       const db = req.app.get('db')
-      const {mealType, _date, allergens, rating} = req.body
+      const {mealType, date, allergens, rating} = req.body
       const {meal_id} = req.params
-      db.foods.edit_food(meal_id, mealType, _date, allergens, rating)
+      db.foods.edit_food([meal_id, mealType, date, allergens, rating])
       .then((foods) => {
           res.status(200).send(foods)
       })

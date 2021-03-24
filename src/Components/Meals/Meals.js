@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { addMeal } from '../../ducks/mealReducer'
 import { connect } from 'react-redux'
+import axios from 'axios'
 
 const Meals = (props) => {
     const [date, setDate] = useState('')
     const [mealType, setMealType] = useState('')
     const [foodItems, setFoodItems] = useState([])
     const [mood, setMood] = useState(0)
+    console.log(props)
 
+    const handleMeal = async (e) => {
+        e.preventDefault()
+        try {
+            const meal = await axios.post('/api/foods', {mealType, date, foodItems, mood})
+            props.addMeal(meal.data)
+        }
+        catch (err) {console.log(err)}
 
+    }
 
     return (
         <form className='meal-input'>
@@ -127,7 +137,7 @@ const Meals = (props) => {
                 </div>
             </section>
 
-            <button> Submit </button>
+            <button onClick={handleMeal} > Submit </button>
 
         </form>
     )
