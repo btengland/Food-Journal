@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     padding-top: 10vh;
+    text-align: center;
 }
 
 .landing {
@@ -26,6 +27,7 @@
     display: flex;
     justify-content: center;
     height: 200px;
+    width: 300px;
     border: 2px solid black;
 }
 
@@ -56,4 +58,23 @@
     flex-direction: column;
     text-align: center;
     padding: 20px;
+}
+
+.login-input{
+    display: flex;
+}
+
+@media screen and (max-width: 883px){
+    .landing {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .login {
+        margin-bottom: 50px;
+    }
+
+    .newuser {
+        margin-left: 0px;
+    }
 }
