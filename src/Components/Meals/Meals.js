@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { addMeal } from '../../ducks/mealReducer'
+import { connect } from 'react-redux'
 
 const Meals = (props) => {
     const [date, setDate] = useState('')
@@ -87,7 +89,7 @@ const Meals = (props) => {
                         <input type='checkbox' value='Eggs' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                         Eggs
                     </label>
-                   
+
                 </div>
             </section>
             <section className='mood-rating'>
@@ -104,7 +106,7 @@ const Meals = (props) => {
 
                     <input type='radio' id='4' value={4} onClick={e => setMood(e.target.value)} />
                     <label for='4' > 4 </label>
-                    
+
                     <input type='radio' id='5' value={5} onClick={e => setMood(e.target.value)} />
                     <label for='5' > 5 </label>
 
@@ -131,4 +133,6 @@ const Meals = (props) => {
     )
 }
 
-export default Meals
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps, {addMeal})(Meals)
