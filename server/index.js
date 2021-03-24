@@ -35,18 +35,7 @@ massive({
 })
 
 
-<<<<<<< HEAD
-
-
-
-// Endpoints:
-// register  `/auth/register`
-// login  `/auth/login`
-// logout`/auth/logout`
-app.post(`/auth/register`, auth.emailMiddleware,auth.usernameMiddleware, auth.register);
-=======
 app.post(`/auth/register`, auth.emailMiddleware, auth.register);
->>>>>>> main
 app.post(`/auth/login`, auth.login);
 app.post(`/auth/logout`, auth.logout);
 app.get(`/auth/user`, auth.getUserSession);
