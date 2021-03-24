@@ -16,17 +16,17 @@ module.exports = {
   },
   addFood: (req, res) => {
       const db = req.app.get('db')
-      const {mealType, date, allergens, rating} = req.body
-      db.foods.add_food(mealType, date, allergens, rating)
+      const {mealType, _date, allergens, rating} = req.body
+      db.foods.add_food(mealType, _date, allergens, rating)
       .then((foods) => {
           res.status(200).send(foods)
       })
   },
   editFoods: (req, res) => {
       const db = req.app.get('db')
-      const {mealType, date, allergens, rating} = req.body
+      const {mealType, _date, allergens, rating} = req.body
       const {meal_id} = req.params
-      db.foods.edit_food(meal_id, mealType, date, allergens, rating)
+      db.foods.edit_food(meal_id, mealType, _date, allergens, rating)
       .then((foods) => {
           res.status(200).send(foods)
       })
