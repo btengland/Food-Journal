@@ -6,7 +6,7 @@ import './App.css'
 import { NotificationContainer } from 'react-notifications'
 import { useEffect } from 'react'
 import { getUser } from './ducks/userReducer'
-import Chart from './Components/Charts/Charts'
+import Chart from './Components/Graphs/Charts'
 const App = (props) => {
 
   useEffect(() => {
