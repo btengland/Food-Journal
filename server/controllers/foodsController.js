@@ -2,7 +2,9 @@
 module.exports = {
   getFoods: (req, res) => {
       const db = req.app.get('db')
-      db.foods.get_foods().then((foods) => {
+      console.log(req.session.user)
+      const {userId} = req.session.user
+      db.get_foods([userId]).then((foods) => {
           res.status(200).send(foods)
       })
       
@@ -10,7 +12,7 @@ module.exports = {
   getFood: (req, res) => {
       const db = req.app.get('db')
       const {meal_id} = req.params
-      db.foods.get_food([meal_id]).then(foods => {
+      db.get_food([meal_id]).then(foods => {
           res.status(200).send(foods[0])
       })
   },
