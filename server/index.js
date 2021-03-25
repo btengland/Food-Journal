@@ -5,6 +5,8 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
+// const path = require('path')
+//  The code above ^^^ is for deploying ibwell to Digital Ocean also see app.get* below
 
 const app = express()
 
@@ -48,8 +50,11 @@ app.delete(`/api/foods/:meal_id`, foods.deleteFood);
 app.post(`/api/foods`, foods.addFood);
 app.put(`/api/foods/:meal_id`, foods.editFoods);
 
-
-
+// app.use(express.static(__dirname + '/../build'))
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../build/index.html'))
+// })
+// The above code catch all to serve routes to send back index.html form build...This is for the Digital Ocean ibwell 
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
 
