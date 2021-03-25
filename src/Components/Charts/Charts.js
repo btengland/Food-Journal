@@ -4,10 +4,10 @@ import {Bar} from 'react-chartjs-2';
 
 
 class Charts extends Component{
-constructor(){
+constructor(props){
     super(props);
     this.state = {
-        chartData:{
+        chartData:props.chartData
             labels:[]
             
         }
@@ -15,17 +15,19 @@ constructor(){
 
 }
 
+static defaultProps = {
+    displayTitle:true,
+    displayLegend: true,
+    legendPosition:'right'
+}
 
 render(){
     return (
-        <div className="chart">
-            <Bar
-  data={data}
-  width={100}
-  height={50}
-  options={{ maintainAspectRatio: false }}
-/>
-        </div>
+        <div className="pieChart">
+            <Chart chartData={this.state.chartData}     
+            
+
+        
     )
 }
 
