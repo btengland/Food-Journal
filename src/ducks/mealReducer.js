@@ -1,7 +1,7 @@
 
 
 const initialState = {
-    meals: {}
+    meals: []
 }
 
 const ADD_MEAL = "ADD_MEAL"

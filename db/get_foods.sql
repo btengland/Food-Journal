@@ -1,1 +1,2 @@
-SELECT * FROM foods;
+SELECT * FROM foods
+WHERE user_id = $1;
