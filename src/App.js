@@ -6,7 +6,7 @@ import './App.css'
 import { NotificationContainer } from 'react-notifications'
 import { useEffect } from 'react'
 import { getUser } from './ducks/userReducer'
-import Chart from './Components/Graphs/Charts'
+//import Doughnut from './Components/Graphs/Doughnut'
 const App = (props) => {
 
   useEffect(() => {
@@ -18,10 +18,10 @@ const App = (props) => {
       {props.user.isLoggedIn === true && <Header />}
       {Routes}
       <NotificationContainer />
+      {/* <Doughnut />  */}
     </div>
   );
 }
-
 const mapStateToProps = state => state
 
 export default connect(mapStateToProps, { getUser })(App);
