@@ -14,12 +14,12 @@ const Meals = (props) => {
         try {
             const meal = await axios.post('/api/foods', {mealType, date, foodItems, mood})
             props.addMeal(meal.data)
+            setDate('')
+            setMealType('')
+            setFoodItems([])
+            setMood(0)
         }
         catch (err) {console.log(err)}
-        setDate('')
-        setMealType('')
-        setFoodItems([])
-        setMood(0)
 
     }
 
