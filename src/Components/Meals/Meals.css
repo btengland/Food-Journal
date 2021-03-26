@@ -1,0 +1,120 @@
+.submit-small {
+  display: none;
+}
+
+.meal-input {
+  height: 500px;
+}
+
+.today {
+  font-size: 30px;
+}
+
+.journal-contanier {
+  background-color: rgb(54, 85, 179, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+  width: 100vw;
+  margin-bottom: 80px;
+}
+
+.journal-top {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.left-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 320px;
+  width: 500px;
+}
+
+.feeling-meal {
+  display: flex;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allergin-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 30px;
+}
+
+.allergins {
+  display: flex;
+}
+
+.mood-rating {
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height: 24px;
+  height: 320px;
+}
+
+.seperate {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .left-box {
+      height: 250px;
+  }
+
+  .journal-contanier {
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .rating {
+    flex-direction: row;
+  }
+
+  .mood-rating {
+    align-items: center;
+    height: 50px;
+  }
+
+  .bad {
+    margin-right: 15px;
+  }
+
+  .good {
+    margin-left: 15px;
+  }
+
+  .submit {
+    display: none;
+  }
+
+  .submit-small {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 530px) {
+    .journal-contanier {
+        height: 600px;
+    }
+}
