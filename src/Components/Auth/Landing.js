@@ -60,13 +60,23 @@ const Landing = (props) => {
 
     return (
         <div className='landing-outer'>
-            <h1 className='welcome'>Welcome to The Food Journal</h1>
+            <div className='welcome-container'>
+                <h1 className='welcome'>Welcome to IBWell</h1>
+            </div>
             <div className='landing'>
                 <form className='login'>
                     <div className='input-outer'>
-                        {!newUser && <h2 className='button-box'>Login here!</h2>}
-                        {newUser && <h2 className='button-box'>Register here!</h2>}
-                        <div>
+                        {!newUser && <h2 className='button-box big'>Login here!</h2>}
+                        {newUser && <h2 className='button-box big'>Register here!</h2>}
+                        {newUser &&
+                            <div className='btn-container'>
+                                <h2>Already have an account? Click "To Login" to login.</h2>
+                            </div>}
+                        {!newUser &&
+                            <div className='btn-container'>
+                                <h2>Don't have an account? Click "New User" to register for a new account.</h2>
+                            </div>}
+                        <div className='input'>
                             <input className={!newUser ? 'hide' : 'login-input'}
                                 placeholder='Username'
                                 onChange={e => setUsername(e.target.value)}
@@ -82,6 +92,12 @@ const Landing = (props) => {
                                 type='password' />
                         </div>
                         <section className='button-box'>
+                            {newUser && <div className='button-box'>
+                                <button className='login-button' onClick={addUser}> To Login </button>
+                            </div>}
+                            {!newUser && <div className='button-box'>
+                                <button className='login-button' onClick={addUser}> New User </button>
+                            </div>}
                             <button className={newUser ? 'hide' : 'login-button'}
                                 onClick={login} > Log In </button>
                             {newUser && <button className='login-button'
@@ -89,18 +105,6 @@ const Landing = (props) => {
                         </section>
                     </div>
                 </form>
-                <div className='newuser'>
-                    {newUser &&
-                        <div className='btn-container'>
-                            <h2>Already have an account? Click "To Login" to login.</h2>
-                            <button onClick={addUser}> To Login </button>
-                        </div>}
-                    {!newUser &&
-                        <div className='btn-container'>
-                            <h2>Don't have an account? Click "New User" to register for a new account.</h2>
-                            <button onClick={addUser}> New User </button>
-                        </div>}
-                </div>
             </div>
         </div>
     )
