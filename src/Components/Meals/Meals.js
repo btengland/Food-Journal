@@ -8,19 +8,18 @@ const Meals = (props) => {
     const [mealType, setMealType] = useState('')
     const [foodItems, setFoodItems] = useState([])
     const [mood, setMood] = useState(0)
-    console.log(props)
 
     const handleMeal = async (e) => {
         e.preventDefault()
         try {
             const meal = await axios.post('/api/foods', {mealType, date, foodItems, mood})
             props.addMeal(meal.data)
+            setDate('')
+            setMealType('')
+            setFoodItems([])
+            setMood(0)
         }
         catch (err) {console.log(err)}
-        setDate('')
-        setMealType('')
-        setFoodItems([])
-        setMood(0)
 
     }
 
