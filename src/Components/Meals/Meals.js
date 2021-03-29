@@ -21,15 +21,7 @@ const Meals = (props) => {
             setFoodItems([])
             setMood(0)
         }
-<<<<<<< HEAD
-        catch (err) { console.log(err) }
-        setDate('')
-        setMealType('')
-        setFoodItems([])
-        setMood(0)
-=======
         catch (err) {console.log(err)}
->>>>>>> main
 
     }
 
