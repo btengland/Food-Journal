@@ -1,12 +1,13 @@
 import '../../reset.css'
 import './Header.css'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, useLocation } from 'react-router-dom'
 import { logOut } from '../../ducks/userReducer'
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 
 const Header = (props) => {
+    const {pathname} = useLocation()
 
     const logout = async () => {
         try {
@@ -21,6 +22,7 @@ const Header = (props) => {
 
     return (
         <div className='header-outer'>
+            {pathname === '/main' &&
             <div className='header-inner'>
                 <div>
                     <Link to='/graphs'>
@@ -29,13 +31,29 @@ const Header = (props) => {
                 </div>
                 <div>
                     <Link to='/main'>
-                        <h2 className='link'>Journal</h2>
+                        <h2 className='link main-word'>Journal</h2>
                     </Link>
                 </div>
                 <div>
                     <button onClick={logout} className='logoutbtn'>Logout</button>
                 </div>
-            </div>
+            </div>}
+            {pathname === '/graphs' &&
+            <div className='header-inner'>
+                <div>
+                    <Link to='/main'>
+                        <h2 className='link'>Journal</h2>
+                    </Link>
+                </div>
+                <div>
+                    <Link to='/graphs'>
+                        <h2 className='link main-word'>Graph</h2>
+                    </Link>
+                </div>
+                <div>
+                    <button onClick={logout} className='logoutbtn'>Logout</button>
+                </div>
+            </div>}
         </div>
     )
 }
