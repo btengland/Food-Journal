@@ -1,3 +1,5 @@
+import '../../reset.css'
+import './Meals.css'
 import React, { useState, useEffect } from 'react'
 import { addMeal } from '../../ducks/mealReducer'
 import { connect } from 'react-redux'
@@ -12,15 +14,14 @@ const Meals = (props) => {
     const handleMeal = async (e) => {
         e.preventDefault()
         try {
-            const meal = await axios.post('/api/foods', {mealType, date, foodItems, mood})
+            const meal = await axios.post('/api/foods', { mealType, date, foodItems, mood })
             props.addMeal(meal.data)
             setDate('')
             setMealType('')
             setFoodItems([])
             setMood(0)
         }
-        catch (err) {console.log(err)}
-
+        catch (err) { console.log(err) }
     }
 
     return (
@@ -43,7 +44,7 @@ const Meals = (props) => {
                 <p> What Was In Your Meal? </p>
                 <div className='allergins'>
                     <label>
-                        <input type='checkbox' value='Gluten' onChange={e =>  setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Gluten' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                         Gluten
                     </label>
                     <label>
@@ -139,13 +140,67 @@ const Meals = (props) => {
                     <label for='10' > 10 </label>
                 </div>
             </section>
-
-            <button onClick={handleMeal} > Submit </button>
-
-        </form>
+            <div className='rating-outer'>
+                <section className='mood-rating'>
+                    <p> How Are You Feeling? </p>
+                    <div className='rating'>
+                        <div className='bad'>
+                            <p>Bad</p>
+                        </div>
+                        <div>
+                            <label for='1' > 1 </label>
+                            <input type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='2' > 2 </label>
+                            <input type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='3' > 3 </label>
+                            <input type='radio' id='3' value={3} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='4' > 4 </label>
+                            <input type='radio' id='4' value={4} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='5' > 5 </label>
+                            <input type='radio' id='5' value={5} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='6' > 6 </label>
+                            <input type='radio' id='6' value={6} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='7' > 7 </label>
+                            <input type='radio' id='7' value={7} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='8' > 8 </label>
+                            <input type='radio' id='8' value={8} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='9' > 9 </label>
+                            <input type='radio' id='9' value={9} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div>
+                            <label for='10' > 10 </label>
+                            <input type='radio' id='10' value={10} onClick={e => setMood(e.target.value)} />
+                        </div>
+                        <div className='good'>
+                            <p>Good</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div className='submit-small'>
+                <button className='submit-size' onClick={handleMeal} > Submit </button>
+            </div>
+        
+        </form >
     )
 }
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, {addMeal})(Meals)
+export default connect(mapStateToProps, { addMeal })(Meals)

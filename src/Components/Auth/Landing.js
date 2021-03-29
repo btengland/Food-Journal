@@ -92,16 +92,16 @@ const Landing = (props) => {
                                 type='password' />
                         </div>
                         <section className='button-box'>
+                            <button className={newUser ? 'hide' : 'login-button'}
+                                onClick={login} > Log In </button>
+                            {newUser && <button className='login-button'
+                                onClick={register} > Register </button>}
                             {newUser && <div className='button-box'>
                                 <button className='login-button' onClick={addUser}> To Login </button>
                             </div>}
                             {!newUser && <div className='button-box'>
                                 <button className='login-button' onClick={addUser}> New User </button>
                             </div>}
-                            <button className={newUser ? 'hide' : 'login-button'}
-                                onClick={login} > Log In </button>
-                            {newUser && <button className='login-button'
-                                onClick={register} > Register </button>}
                         </section>
                     </div>
                 </form>

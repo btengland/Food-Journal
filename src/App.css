@@ -41,6 +41,21 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+p2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  padding: 10px;
+}
+
+p3 {
+  font-family: "Poppins", sans-serif;
+  padding-right: 10px;
+}
+
+label {
+  font-family: "Poppins", sans-serif;
+}
+
 link {
   text-decoration: none;
 }
