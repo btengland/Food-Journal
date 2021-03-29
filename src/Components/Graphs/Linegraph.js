@@ -36,7 +36,7 @@ const Linegraph = (props) => {
     const dates = props.meals.meals.map(i => i._date.substring(0, 10))
     console.log(ratings, dates)
 
-    useEffect (() =>{
+    useEffect(() => {
         setGraphData({
             labels: dates,
             datasets: [
@@ -51,7 +51,7 @@ const Linegraph = (props) => {
                 }
             ]
         })
-        
+
     }, [])
 
 
@@ -61,18 +61,20 @@ const Linegraph = (props) => {
     return (
         <div>
             <Line
-                 data={graphData}
-                 options={{
-                   title:{
-                     display:true,
-                     text:'After Meal Feeling',
-                     fontSize:20
-                   },
-                   legend:{
-                     display:true,
-                     position:'right'
-                   }
-                 }}
+                data={graphData}
+                height={20}
+                width={100}
+                options={{
+                    title: {
+                        display: true,
+                        text: 'After Meal Feeling',
+                        fontSize: 20
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right'
+                    }
+                }}
             />
         </div>
     )

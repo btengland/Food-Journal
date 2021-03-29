@@ -21,8 +21,7 @@ const Meals = (props) => {
             setFoodItems([])
             setMood(0)
         }
-        catch (err) {console.log(err)}
-
+        catch (err) { console.log(err) }
     }
 
     return (
@@ -51,76 +50,76 @@ const Meals = (props) => {
                     <section className='allergin-list'>
                         <p2> What Was In Your Meal? </p2>
                         <div className='allergins'>
-                            <div>
+                            <div className='outer-label'>
                                 <div className='seperate'>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Gluten' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Gluten
                                 </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Onions' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Onions
                                 </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Dairy' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Dairy
                                 </label>
                                 </div>
                                 <div className='seperate'>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Raw Vegetables' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Raw Vegetables
                                 </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Nuts' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Nuts
                                 </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Caffeine' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Caffeine
                                 </label>
                                 </div>
                             </div>
-                            <div>
+                            <div className='outer-label'>
                                 <div className='seperate'>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Popcorn' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Popcorn
                                 </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Soy' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Soy
                                 </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Citrus' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                     Citrus
                                 </label>
                                 </div>
                                 <div className='seperate'>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Beans' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                 Beans
                             </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Garlic' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                 Garlic
                             </label>
-                                    <label>
+                                    <label className='labels'>
                                         <input type='checkbox' value='Eggs' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                 Eggs
                             </label>
                                 </div>
                             </div>
                             <div className='seperate'>
-                                <label>
+                                <label className='labels'>
                                     <input type='checkbox' value='Shellfish' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                 Shellfish
                             </label>
-                                <label>
+                                <label className='labels'>
                                     <input type='checkbox' value='Red Meat' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                 Red Meat
                             </label>
-                                <label>
+                                <label className='labels'>
                                     <input type='checkbox' value='Fructose' onChange={e => setFoodItems([...foodItems, e.target.value])} />
                                 Fructose(sugar)
                             </label>
@@ -128,7 +127,7 @@ const Meals = (props) => {
                         </div>
                     </section>
                     <div className='submit hide'>
-                        <button onClick={handleMeal} > Submit </button>
+                        <button className='submit-size' onClick={handleMeal} > Submit </button>
                     </div>
                 </div>
                 <div className='rating-outer'>
@@ -185,8 +184,8 @@ const Meals = (props) => {
                     </section>
                 </div>
                 <div className='submit-small'>
-                        <button onClick={handleMeal} > Submit </button>
-                    </div>
+                    <button className='submit-size' onClick={handleMeal} > Submit </button>
+                </div>
             </div>
         </form>
     )
