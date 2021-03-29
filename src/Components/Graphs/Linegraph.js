@@ -52,7 +52,7 @@ const Linegraph = (props) => {
             ]
         })
         
-    }, [])
+    }, [dates, ratings])
 
 
 
