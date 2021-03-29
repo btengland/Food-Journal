@@ -6,7 +6,8 @@ import './App.css'
 import { NotificationContainer } from 'react-notifications'
 import { useEffect } from 'react'
 import { getUser } from './ducks/userReducer'
-//import Doughnut from './Components/Graphs/Doughnut'
+// import Chart from './components/chart';
+
 const App = (props) => {
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const App = (props) => {
       {props.user.isLoggedIn === true && <Header />}
       {Routes}
       <NotificationContainer />
-      {/* <Doughnut />  */}
+      
     </div>
   );
 }

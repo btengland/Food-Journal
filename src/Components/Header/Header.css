@@ -1,0 +1,35 @@
+.header-outer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 12vh;
+  width: 100vw;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 12vh;
+  width: 100vw;
+}
+
+.link {
+  color: black;
+  font-size: 20px;
+}
+
+.main-word {
+  font-size: 40px;
+}
+
+.logoutbtn {
+  font-size: 20px;
+  background-color: transparent;
+  height: 40px;
+  border: solid #277e7e;
+}
+
+.logoutbtn:hover {
+  background-color: #277e7e;
+}

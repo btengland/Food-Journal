@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Poppins&display=swap");
+
+* {
+  text-decoration: none;
+}
 
 body {
   background-color: #36b3b3;
@@ -10,7 +14,7 @@ input {
 
 button {
   background-color: transparent;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 40px;
   border: solid #277e7e;
 }
@@ -20,14 +24,23 @@ button:hover {
 }
 
 h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 40px;
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  line-height: 22px;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+link {
+  text-decoration: none;
 }
