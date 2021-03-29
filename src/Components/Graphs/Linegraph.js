@@ -34,28 +34,26 @@ const Linegraph = (props) => {
     // }, [])
     const ratings = props.meals.meals.map(i => i.rating)
     const dates = props.meals.meals.map(i => i._date.substring(0, 10))
-    console.log(ratings, dates)
 
-    useEffect(() => {
-        setGraphData({
-            labels: dates,
-            datasets: [
-                {
-                    label: 'Feeling',
-                    fill: false,
-                    lineTension: 0.0,
-                    backgroundColor: '#3e7e',
-                    borderColor: 'RGB(0,0,0,1)',
-                    borderWidth: 2,
-                    data: ratings
-                }
-            ]
-        })
+    // useEffect(() => {
+    //     setGraphData({
+    //         labels: dates,
+    //         datasets: [
+    //             {
+    //                 label: 'Feeling',
+    //                 fill: false,
+    //                 lineTension: 0.0,
+    //                 backgroundColor: '#3e7e',
+    //                 borderColor: 'RGB(0,0,0,1)',
+    //                 borderWidth: 2,
+    //                 data: ratings
+    //             }
+    //         ]
+    //     })
 
-    }, [dates, ratings])
+    // }, [dates, ratings])
 
-
-
+//this gives an infinite loop of errors ^^
 
 
     return (
