@@ -26,9 +26,9 @@ const Chart = () => (
   </Subscription>
 );
 
-// query {
-//   foods : allergens {
-//     label:
-//     data:
-//   }
-// }
+query {
+  foods : allergens {
+    label:
+    data:
+  }
+}
