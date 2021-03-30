@@ -5,19 +5,19 @@ import { connect } from 'react-redux'
 
 const Doughnutgraph = (props) => {
   const [doughnutData, setDoughnutData] = useState([])
+  
+  
+  // const doughnutDataMapped = props.meals.meals.map(i => i.allergens)
+  
+  
 
-
-  
-  const doughnutData = props.meals.meals  
-  
-  
-  const allergens = doughnutData.reduce((acc, mealObj) => {
+  const allergens = props.meals.meals.reduce((acc, mealObj) => {
     const invalidChars = ['\'', '"', '{', '}']
   
     if (mealObj.allergens) {
       const allergensArr = mealObj.allergens.split(',')
       
-      for (i = 0; i < allergensArr.length; i++) {
+      for (let i = 0; i < allergensArr.length; i++) {
         for (let j = 0; j < allergensArr[i].length; j++) {
         
           if (invalidChars.includes(allergensArr[i][j])) {
@@ -31,7 +31,11 @@ const Doughnutgraph = (props) => {
     } else {
       return acc;
     }
+    
   }, []) 
+
+// console.log(allergens)
+ 
 
 
   useEffect (() =>{
@@ -39,13 +43,17 @@ const Doughnutgraph = (props) => {
       labels: allergens,
       datasets: [{
   
-        label:"Reoccuring Allergens",
-        data:[],
-        backgroundColor:
+        label:"",
+        fill: true,
+        backgroundColor:'#CD5C5C',
+        borderColor: '#39B51E',
+        borderWidth: 1,
+        data: allergens,
+        
   
       }]
     })
-  })
+  },[])
   
   return (
     <div>
@@ -54,7 +62,7 @@ const Doughnutgraph = (props) => {
       options ={{
         title:{
           display:true,
-          text:"text for naming",
+          text:"Reoccuring Allergens",
           fontSize:20,
         },
         legend:{
@@ -76,37 +84,32 @@ const Doughnutgraph = (props) => {
 
 
 
-// import {Subscription} from 'react-apollo';
+
 // import gql from 'graphql-tag';
 // import graphql2chartjs from 'graphql2chartjs';
-// import React, {Component} from 'react';
-// import {doughnut} from 'react-chartjs-2';
+// import {Doughnut} from 'react-chartjs-2';
+// import {Query} from 'react-apollo';
 
 
-// const Chart = () => (
-//   <Subscription
-//     subscription={gql`
-//       subscription {
-//         foods: allergens {
-//           label: 
-//           rating: 
-//         }
-//       }`}
+// const doughnutGiveUp = () => (
+//   <Query query={gql`
+//   query {
+//     reocccuring_allergens{
+//       label: allergens
+//       data: count
 //     }
-
-//     {({data} => {
-//       if (data) {
-//         const g2c = new graphql2chartjs(data, 'doughnut');
-//         return (<doughnut data={g2c.data} />);
+//   }`}>
+//   {({ loading, error, data}) => {
+//     if (data) {
+//       const g2c = new graphql2chartjs(data, 'doughnut');
+//       return <Doughnut data={g2c.data} />
+//     } else {
+//         return 'Loading/error';
 //       }
-//       return null;
 //     }
-//   </Subscription>
-// );
+//   } 
+//   </Query>  
+   
+// )
 
-// query {
-//   foods : allergens {
-//     label:
-//     data:
-//   }
-// }
+// export default doughnutGiveUp
