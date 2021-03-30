@@ -106,40 +106,7 @@ const Meals = (props) => {
 
                 </div>
             </section>
-            <section className='mood-rating'>
-                <p> How Are You Feeling? </p>
-                <div className='rating'>
-                    <input name='mood' type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
-                    <label for='1' > 1 </label>
-
-                    <input name='mood' type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />
-                    <label for='2' > 2 </label>
-
-                    <input name='mood' type='radio' id='3' value={3} onClick={e => setMood(e.target.value)} />
-                    <label for='3' > 3 </label>
-
-                    <input name='mood' type='radio' id='4' value={4} onClick={e => setMood(e.target.value)} />
-                    <label for='4' > 4 </label>
-
-                    <input name='mood' type='radio' id='5' value={5} onClick={e => setMood(e.target.value)} />
-                    <label for='5' > 5 </label>
-
-                    <input name='mood' type='radio' id='6' value={6} onClick={e => setMood(e.target.value)} />
-                    <label for='6' > 6 </label>
-
-                    <input name='mood' type='radio' id='7' value={7} onClick={e => setMood(e.target.value)} />
-                    <label for='7' > 7 </label>
-
-                    <input name='mood' type='radio' id='8' value={8} onClick={e => setMood(e.target.value)} />
-                    <label for='8' > 8 </label>
-
-                    <input name='mood' type='radio' id='9' value={9} onClick={e => setMood(e.target.value)} />
-                    <label for='9' > 9 </label>
-
-                    <input name='mood' type='radio' id='10' value={10} onClick={e => setMood(e.target.value)} />
-                    <label for='10' > 10 </label>
-                </div>
-            </section>
+           
             <div className='rating-outer'>
                 <section className='mood-rating'>
                     <p> How Are You Feeling? </p>
@@ -149,43 +116,43 @@ const Meals = (props) => {
                         </div>
                         <div>
                             <label for='1' > 1 </label>
-                            <input type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='2' > 2 </label>
-                            <input type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='3' > 3 </label>
-                            <input type='radio' id='3' value={3} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='3' value={3} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='4' > 4 </label>
-                            <input type='radio' id='4' value={4} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='4' value={4} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='5' > 5 </label>
-                            <input type='radio' id='5' value={5} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='5' value={5} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='6' > 6 </label>
-                            <input type='radio' id='6' value={6} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='6' value={6} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='7' > 7 </label>
-                            <input type='radio' id='7' value={7} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='7' value={7} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='8' > 8 </label>
-                            <input type='radio' id='8' value={8} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='8' value={8} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='9' > 9 </label>
-                            <input type='radio' id='9' value={9} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='9' value={9} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div>
                             <label for='10' > 10 </label>
-                            <input type='radio' id='10' value={10} onClick={e => setMood(e.target.value)} />
+                            <input name='mood' type='radio' id='10' value={10} onClick={e => setMood(e.target.value)} />
                         </div>
                         <div className='good'>
                             <p>Good</p>
