@@ -64,6 +64,7 @@
     height: 300px;
     width: 500px;
     background-color: #36b3b3;
+    box-shadow: 0 0 8px 1px rgb(71, 71, 71);
 }
 
 .button-box {

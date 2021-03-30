@@ -29,7 +29,7 @@ const Main = (props) => {
         catch (err) {
             console.log(err)
         }}
-    }, [props.user.isLoggedIn])
+    }, [])
 
     return (
         <div>
