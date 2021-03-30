@@ -196,7 +196,6 @@ const Meals = (props) => {
             <div className='submit-small'>
                 <button className='submit-size' onClick={handleMeal} > Submit </button>
             </div>
-        
         </form >
     )
 }
