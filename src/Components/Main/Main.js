@@ -20,7 +20,6 @@ const Main = (props) => {
       }, [])
 
     useEffect(async () => {
-        console.log('test')
         if(props.user.isLoggedIn)  {try {
             const mealList = await axios.get('/api/foods')
             console.log(mealList.data)
