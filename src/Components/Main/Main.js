@@ -6,6 +6,7 @@ import {getUser} from '../../ducks/userReducer'
 import { getMeals } from '../../ducks/mealReducer'
 import Meals from '../Meals/Meals'
 import Linegraph from '../Graphs/Linegraph'
+import Doughnutgraph from '../Graphs/Doughnutgraph'
 
 
 const Main = (props) => {
@@ -32,6 +33,7 @@ const Main = (props) => {
     return (
         <div>
             <Linegraph/>
+            <Doughnutgraph/>
             <Meals />
         </div>
     )
