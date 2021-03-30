@@ -44,63 +44,63 @@ const Meals = (props) => {
                 <p> What Was In Your Meal? </p>
                 <div className='allergins'>
                     <label>
-                        <input type='checkbox' value='Gluten' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Gluten' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Gluten
                     </label>
                     <label>
-                        <input type='checkbox' value='Onions' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Onions' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Onions
                     </label>
                     <label>
-                        <input type='checkbox' value='Dairy' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Dairy' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Dairy
                     </label>
                     <label>
-                        <input type='checkbox' value='Raw Vegetables' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Raw Vegetables' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Raw Vegetables
                     </label>
                     <label>
-                        <input type='checkbox' value='Nuts' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Nuts' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Nuts
                     </label>
                     <label>
-                        <input type='checkbox' value='Caffeine' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Caffeine' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Caffeine
                     </label>
                     <label>
-                        <input type='checkbox' value='Shellfish' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Shellfish' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Shellfish
                     </label>
                     <label>
-                        <input type='checkbox' value='Red Meat' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Red Meat' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Red Meat
                     </label>
                     <label>
-                        <input type='checkbox' value='Fructose' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Fructose' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Fructose(sugar)
                     </label>
                     <label>
-                        <input type='checkbox' value='Popcorn' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Popcorn' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Popcorn
                     </label>
                     <label>
-                        <input type='checkbox' value='Soy' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Soy' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Soy
                     </label>
                     <label>
-                        <input type='checkbox' value='Citrus' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Citrus' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Citrus
                     </label>
                     <label>
-                        <input type='checkbox' value='Beans' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Beans' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Beans
                     </label>
                     <label>
-                        <input type='checkbox' value='Garlic' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Garlic' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Garlic
                     </label>
                     <label>
-                        <input type='checkbox' value='Eggs' onChange={e => setFoodItems([...foodItems, e.target.value])} />
+                        <input type='checkbox' value='Eggs' onChange={e => e.target.checked ? setFoodItems([...foodItems, e.target.value]) : setFoodItems(foodItems.filter(i => i !== e.target.value))} />
                         Eggs
                     </label>
 
@@ -117,7 +117,7 @@ const Meals = (props) => {
                         <div>
                             <label for='1' > 1 </label>
                             <input name='mood' type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
-                        </div>
+                 : setFoodItems(foodItems.splice(e.target.value,1))        </div>
                         <div>
                             <label for='2' > 2 </label>
                             <input name='mood' type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />

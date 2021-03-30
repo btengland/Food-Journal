@@ -6,6 +6,7 @@ import {getUser} from '../../ducks/userReducer'
 import { getMeals } from '../../ducks/mealReducer'
 import Meals from '../Meals/Meals'
 import Linegraph from '../Graphs/Linegraph'
+import Doughnutgraph from '../Graphs/Doughnut'
 
 
 const Main = (props) => {
@@ -19,7 +20,6 @@ const Main = (props) => {
       }, [])
 
     useEffect(async () => {
-        console.log('test')
         if(props.user.isLoggedIn)  {try {
             const mealList = await axios.get('/api/foods')
             console.log(mealList.data)
@@ -33,6 +33,7 @@ const Main = (props) => {
     return (
         <div>
             <Linegraph/>
+            <Doughnutgraph/>
             <Meals />
         </div>
     )

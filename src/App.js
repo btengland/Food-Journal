@@ -21,10 +21,10 @@ const App = (props) => {
       {Routes}
       {props.user.isLoggedIn === true && <Footer />}
       <NotificationContainer />
+      
     </div>
   );
 }
-
 const mapStateToProps = state => state
 
 export default connect(mapStateToProps, { getUser })(App);
