@@ -2,10 +2,11 @@ import '../../reset.css'
 import React, {useState, useEffect} from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import { connect } from 'react-redux'
+import { chartColors } from "./Colors"
 
 const Doughnutgraph = (props) => {
   const [doughnutData, setDoughnutData] = useState([])
-  
+
   
   // const doughnutDataMapped = props.meals.meals.map(i => i.allergens)
   
@@ -32,23 +33,115 @@ const Doughnutgraph = (props) => {
       return acc;
     }
     
-  }, []) 
+  }, []); 
 
+  let numofOnions = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Onions"){
+      numofOnions++
+    }
+  }
+
+  let numofGluten = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Gluten"){
+      numofGluten++
+    }
+  }
+  let numofDairy = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Dairy"){
+      numofDairy++
+    }
+  }
+  let numofRawVegetables = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Raw Vegetables"){
+      numofRawVegetables++
+    }
+  }
+  let numofNuts = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Nuts"){
+      numofNuts++
+    }
+  }
+  let numofCaffeine = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Caffeine"){
+      numofCaffeine++
+    }
+  }
+    let numofShellfish = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Shellfish"){
+      numofShellfish++
+    }
+  }
+  let numofRedMeat = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Red Meat"){
+      numofRedMeat++
+    }
+  }
+  let numofFructoseSugar = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Fructose(Sugar)"){
+      numofFructoseSugar++
+    }
+  }
+  let numofPopcorn = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Popcorn"){
+      numofPopcorn++
+    }
+  }
+  let numofSoy = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Soy"){
+      numofSoy++
+    }
+  }
+  let numofCitrus = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Citrus"){
+      numofCitrus++
+    }
+  }
+  let numofBeans = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Beans"){
+      numofBeans++
+    }
+  }
+  let numofGarlic = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Garlic"){
+      numofGarlic++
+    }
+  }
+  let numofEggs = 0;
+  for (let k =0; k < allergens.length; k++){
+    if (allergens[k] === "Eggs"){
+      numofEggs++
+    }
+  }
+  
 // console.log(allergens)
  
 
 
   useEffect (() =>{
     setDoughnutData({
-      labels: allergens,
+      labels: ["Gluten",'Onions'],
       datasets: [{
   
         label:"",
         fill: true,
-        backgroundColor:'#CD5C5C',
-        borderColor: '#39B51E',
+        backgroundColor:chartColors,
+        borderColor: chartColors,
         borderWidth: 1,
-        data: allergens,
+        data:[numofGluten,numofOnions]
         
   
       }]

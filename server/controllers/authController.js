@@ -1,4 +1,8 @@
+require('dotenv').config()
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer')
+
+const {EMAIL, PASSWORD} = process.env
 
 module.exports = {
     register: async (req, res) => {
@@ -18,6 +22,32 @@ module.exports = {
             email: newUser.email,
             username: newUser.username
         }
+
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: EMAIL,
+                pass: PASSWORD
+            }
+        })
+        
+        let mailOptions = {
+            from: 'IB-Well',
+            to: email,
+            subject: `Welcome ${username}!`,
+            text: `Welcome ${username}, and thank you for joining IB-Well.  We are here to help you on your journey to being a healthy and happy YOU.  All it takes is charting your meals with the preselected food sensitivities and we will show you which pops up most often on your down days.  
+            
+            If you have any issues, or questions, please let us know by, reaching out and sending a message.
+            
+            Sincerely,
+                The IB-Well Team `
+        }
+        transporter.sendMail(mailOptions, function(err, data) {
+            if (err) {
+                console.log(err)
+            }else {console.log('email sent')}
+        })
+
         res.status(200).send(req.session.user)
     },
     login: async(req, res) => {

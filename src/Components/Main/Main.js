@@ -20,15 +20,16 @@ const Main = (props) => {
       }, [])
 
     useEffect(async () => {
-        try {
+        console.log('test')
+        if(props.user.isLoggedIn)  {try {
             const mealList = await axios.get('/api/foods')
             console.log(mealList.data)
             props.getMeals(mealList.data)
         }
         catch (err) {
             console.log(err)
-        }
-    }, [])
+        }}
+    }, [props.user.isLoggedIn])
 
     return (
         <div>
