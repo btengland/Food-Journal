@@ -127,21 +127,21 @@ const Doughnutgraph = (props) => {
     }
   }
   
-// console.log(allergens)
+
  
 
 
   useEffect (() =>{
     setDoughnutData({
-      labels: ["Gluten",'Onions'],
+      labels: ["Gluten",'Onions','Dairy','Raw Vegetables','Nuts','Caffeine','Shellfish','Red Meat','Fructose (Sugar)','Popcorn','Soy','Citrus','Beans','Garlic','Eggs'],
       datasets: [{
   
         label:"",
         fill: true,
-        backgroundColor:chartColors,
-        borderColor: chartColors,
+        backgroundColor:chartColors,        
+        borderColor:chartColors,
         borderWidth: 1,
-        data:[numofGluten,numofOnions]
+        data:[numofGluten,numofOnions,numofDairy,numofRawVegetables,numofNuts,numofCaffeine,numofShellfish,numofRedMeat,numofFructoseSugar,numofPopcorn,numofSoy,numofCitrus,numofBeans,numofGarlic,numofEggs]
         
   
       }]
@@ -160,7 +160,7 @@ const Doughnutgraph = (props) => {
         },
         legend:{
           display:true,
-          position:'right'
+          position:'center'
         }
       }}
       />
