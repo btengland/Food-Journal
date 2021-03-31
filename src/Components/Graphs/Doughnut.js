@@ -161,20 +161,19 @@ const Doughnutgraph = (props) => {
                             },
                         ],
                     }}
-                    height={300}
-                    width={800}
-                    // options={{                      
-                    //     maintainAspectRatio: false,
-                    //     scales: {
-                    //         yAxes: [
-                    //             {
-                    //                 ticks: {
-                    //                     beginAtZero: true,
-                    //                 }
-                    //             }
-                    //         ]
-                    //     }
-                    // }}
+                    height={400}
+                    width={400}
+                    options={{                      
+                        title: {
+                          display: true,
+                          text: "                   Reoccuring Allergens",
+                          fontSize: 30,
+                        },
+                        legend:{
+                          display: true,
+                          position: 'left',
+                        }
+                    }}
                 />
     </div>
   )
