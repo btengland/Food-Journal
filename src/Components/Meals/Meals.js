@@ -117,7 +117,7 @@ const Meals = (props) => {
                         <div>
                             <label for='1' > 1 </label>
                             <input name='mood' type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
-                 : setFoodItems(foodItems.splice(e.target.value,1))        </div>
+                       </div>
                         <div>
                             <label for='2' > 2 </label>
                             <input name='mood' type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />
