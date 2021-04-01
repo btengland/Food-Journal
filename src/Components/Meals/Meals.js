@@ -12,10 +12,16 @@ const Meals = (props) => {
     const [foodItems, setFoodItems] = useState([])
     const [mood, setMood] = useState(0)
 
+    function unCheck() {
+        let x = document.getElementsByClassName("check");
+       for(let i = 0; i <= x.length; i++) {
+          x[i].checked = false;
+        }   
+    }
 
 
     const handleMeal = async (e) => {
-
+        e.preventDefault()
         try {
             const meal = await axios.post('/api/foods', { mealType, date, foodItems, mood })
             props.addMeal(meal.data)
@@ -23,9 +29,10 @@ const Meals = (props) => {
             setMealType('')
             setFoodItems([])
             setMood(0)
-
+            unCheck()
         }
         catch (err) { console.log(err) }
+        
     }
 
     return (
@@ -166,62 +173,6 @@ const Meals = (props) => {
                         <button className='submit-size' onClick={handleMeal} > Submit </button>
                     </div>
                 </section>
-                <div className='rating-outer'>
-                    <section className='mood-rating'>
-                        <p> How Are You Feeling? </p>
-                        <div className='rating'>
-                            <div className='bad'>
-                                <p>Bad</p>
-                            </div>
-                            <div className='number'>
-                                <label for='1' > 1 </label>
-                                <input name='mood' type='radio' id='1' value={1} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='2' > 2 </label>
-                                <input name='mood' type='radio' id='2' value={2} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='3' > 3 </label>
-                                <input name='mood' type='radio' id='3' value={3} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='4' > 4 </label>
-                                <input name='mood' type='radio' id='4' value={4} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='5' > 5 </label>
-                                <input name='mood' type='radio' id='5' value={5} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='6' > 6 </label>
-                                <input name='mood' type='radio' id='6' value={6} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='7' > 7 </label>
-                                <input name='mood' type='radio' id='7' value={7} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='8' > 8 </label>
-                                <input name='mood' type='radio' id='8' value={8} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='9' > 9 </label>
-                                <input name='mood' type='radio' id='9' value={9} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='number'>
-                                <label for='10' > 10 </label>
-                                <input name='mood' type='radio' id='10' value={10} onClick={e => setMood(e.target.value)} />
-                            </div>
-                            <div className='good'>
-                                <p>Good</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div className='submit-small'>
-                    <button className='submit-size' onClick={handleMeal} > Submit </button>
-                </div>
             </div>
             <div className='graph'>
                 <Doughnutgraph />
