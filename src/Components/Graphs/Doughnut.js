@@ -166,7 +166,7 @@ const Doughnutgraph = (props) => {
                     options={{                      
                         title: {
                           display: true,
-                          text: "                   Reoccuring Allergens",
+                          text: "                            Reoccuring Allergens",
                           fontSize: 30,
                         },
                         legend:{

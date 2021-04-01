@@ -35,12 +35,12 @@ const Main = (props) => {
 
     return (
         <div>
-            <Linegraph />
             <div className='graph'>
                 <div></div>
-                <Doughnutgraph />
+                <div className='graph-inner'><Doughnutgraph /></div>
                 <div></div>
             </div>
+            <Linegraph />
             <Meals />
         </div>
     )
