@@ -1,0 +1,20 @@
+.graph {
+    display: flex;
+    justify-content: center;
+}
+
+.graph-inner {
+    height: 300px;
+}
+
+@media screen and (max-width: 620px) {
+    .graph-inner {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .graph-inner {
+        width: 380px;
+    }
+}

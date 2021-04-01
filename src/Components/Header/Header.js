@@ -2,12 +2,11 @@ import '../../reset.css'
 import './Header.css'
 import { Link, withRouter, useLocation } from 'react-router-dom'
 import { logOut } from '../../ducks/userReducer'
-import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 
 const Header = (props) => {
-    const {pathname} = useLocation()
+    const { pathname } = useLocation()
 
     const logout = async () => {
         try {
@@ -23,22 +22,21 @@ const Header = (props) => {
     return (
         <div className='header-outer'>
             {pathname === '/main' &&
-            <div className='header-inner'>
-                <div>
-                    <Link to='/graphs'>
+                <div className='header-inner'>
+                    <div>
+                        {/* <Link to='/graphs'>
                         <h2 className='link'>Graph</h2>
-                    </Link>
-                </div>
-                <div>
-                    <Link to='/main'>
+                    </Link> */}
+                        <h2 className='link'>&copy; IBWell</h2>
+                    </div>
+                    <div>
                         <h2 className='link main-word'>Journal</h2>
-                    </Link>
-                </div>
-                <div>
-                    <button onClick={logout} className='logoutbtn'>Logout</button>
-                </div>
-            </div>}
-            {pathname === '/graphs' &&
+                    </div>
+                    <div>
+                        <button onClick={logout} className='logoutbtn'>Logout</button>
+                    </div>
+                </div>}
+            {/* {pathname === '/graphs' &&
             <div className='header-inner'>
                 <div>
                     <Link to='/main'>
@@ -53,7 +51,7 @@ const Header = (props) => {
                 <div>
                     <button onClick={logout} className='logoutbtn'>Logout</button>
                 </div>
-            </div>}
+            </div>} */}
         </div>
     )
 }
