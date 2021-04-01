@@ -161,8 +161,8 @@ const Doughnutgraph = (props) => {
                             },
                         ],
                     }}
-                    height={400}
-                    width={400}
+                    height={300}
+                    width={600}
                     options={{                      
                         title: {
                           display: true,

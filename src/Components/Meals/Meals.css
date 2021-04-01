@@ -1,7 +1,6 @@
-.graph {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+.meal-input {
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .submit-small {

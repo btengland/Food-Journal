@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { addMeal } from '../../ducks/mealReducer'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import Doughnutgraph from '../Graphs/Doughnut'
 
 const Meals = (props) => {
     const [date, setDate] = useState('')
@@ -187,9 +186,6 @@ const Meals = (props) => {
                 <div className='submit-small'>
                     <button className='submit-size' onClick={handleMeal} > Submit </button>
                 </div>
-            </div>
-            <div className='graph'>
-                <Doughnutgraph />
             </div>
         </form>
     )
