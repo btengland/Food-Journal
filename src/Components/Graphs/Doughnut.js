@@ -13,7 +13,7 @@ const Doughnutgraph = (props) => {
   const allergens = props.meals.meals.reduce((acc, mealObj) => {
     const invalidChars = ['\'', '"', '{', '}']
   
-    if (mealObj.allergens && mealObj.rating > 6) {
+    if (mealObj.allergens && mealObj.rating < 6) {
       const allergensArr = mealObj.allergens.split(',')
       
       for (let i = 0; i < allergensArr.length; i++) {
